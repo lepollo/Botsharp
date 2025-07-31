@@ -1,0 +1,6 @@
+@QQBot.Net.Examples_HostAddress = http://localhost:5253
+
+GET {{QQBot.Net.Examples_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

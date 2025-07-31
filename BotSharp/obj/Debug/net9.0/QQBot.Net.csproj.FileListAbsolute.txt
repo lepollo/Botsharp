@@ -1,0 +1,12 @@
+D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\QQBot.Net.csproj.AssemblyReference.cache
+D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\QQBot.Net.GeneratedMSBuildEditorConfig.editorconfig
+D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\QQBot.Net.AssemblyInfoInputs.cache
+D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\QQBot.Net.AssemblyInfo.cs
+D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\QQBot.Net.csproj.CoreCompileInputs.cache
+D:\qqbotSdk\QQBot.Net\bin\Debug\net9.0\QQBot.Net.deps.json
+D:\qqbotSdk\QQBot.Net\bin\Debug\net9.0\QQBot.Net.dll
+D:\qqbotSdk\QQBot.Net\bin\Debug\net9.0\QQBot.Net.pdb
+D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\QQBot.Net.dll
+D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\refint\QQBot.Net.dll
+D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\QQBot.Net.pdb
+D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\ref\QQBot.Net.dll
