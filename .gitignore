@@ -1,0 +1,16 @@
+# Visual Studio cache files
+.vs
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.user
+*.suo
+
+# Rider files
+.idea
+
+# Mac files
+.DS_Store
