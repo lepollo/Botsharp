@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BotSharp.Examples")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3690f3f52313dbbc85cfc234ace8f45e6e9197da")]
 [assembly: System.Reflection.AssemblyProductAttribute("BotSharp.Examples")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BotSharp.Examples")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

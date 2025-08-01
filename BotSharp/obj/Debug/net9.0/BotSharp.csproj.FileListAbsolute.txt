@@ -10,15 +10,3 @@ D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\BotSharp.dll
 D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\refint\BotSharp.dll
 D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\BotSharp.pdb
 D:\qqbotSdk\QQBot.Net\obj\Debug\net9.0\ref\BotSharp.dll
-D:\Botsharp\BotSharp\bin\Debug\net9.0\BotSharp.deps.json
-D:\Botsharp\BotSharp\bin\Debug\net9.0\BotSharp.dll
-D:\Botsharp\BotSharp\bin\Debug\net9.0\BotSharp.pdb
-D:\Botsharp\BotSharp\obj\Debug\net9.0\BotSharp.csproj.AssemblyReference.cache
-D:\Botsharp\BotSharp\obj\Debug\net9.0\BotSharp.GeneratedMSBuildEditorConfig.editorconfig
-D:\Botsharp\BotSharp\obj\Debug\net9.0\BotSharp.AssemblyInfoInputs.cache
-D:\Botsharp\BotSharp\obj\Debug\net9.0\BotSharp.AssemblyInfo.cs
-D:\Botsharp\BotSharp\obj\Debug\net9.0\BotSharp.csproj.CoreCompileInputs.cache
-D:\Botsharp\BotSharp\obj\Debug\net9.0\BotSharp.dll
-D:\Botsharp\BotSharp\obj\Debug\net9.0\refint\BotSharp.dll
-D:\Botsharp\BotSharp\obj\Debug\net9.0\BotSharp.pdb
-D:\Botsharp\BotSharp\obj\Debug\net9.0\ref\BotSharp.dll
