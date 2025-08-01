@@ -113,3 +113,68 @@ namespace BotSharp.Examples.Controllers
 ## 贡献
 
 欢迎贡献！请随时提交拉取请求。
+
+## API 参考
+
+本节介绍了 BotSharp 库的公共 API。
+
+### `IQBotClient`
+
+用于与 QQ 机器人交互的主要客户端。
+
+**属性**
+
+-   `User? CurrentUser { get; }`
+    -   **说明**: 获取连接成功后当前机器人的用户信息。
+
+**事件**
+
+-   `event Action<ReadyPayload> OnReady`
+    -   **说明**: 当机器人准备就绪并成功连接时触发。
+-   `event Action<Message> OnAtMessageCreated`
+    -   **说明**: 当收到 @ 消息时触发。
+
+**方法**
+
+-   `Task ProcessWebhookPayloadAsync(string payload)`
+    -   **说明**: 处理从 QQ 机器人 webhook 接收到的原始 payload。
+    -   **参数**:
+        -   `payload` (string): 来自 webhook 的 JSON payload。
+
+### `IMessageService`
+
+用于发送消息的服务。
+
+**方法**
+
+-   `Task<Message> SendMessageAsync(string channelId, string message)`
+    -   **说明**: 向指定频道发送消息。
+    -   **参数**:
+        -   `channelId` (string): 要发送消息的频道 ID。
+        -   `message` (string): 消息内容。
+    -   **返回**: 一个包含已发送 `Message` 对象的 `Task`。
+
+### `IAuthenticationService`
+
+用于处理身份验证的服务。
+
+**方法**
+
+-   `Task<string> GetAccessTokenAsync()`
+    -   **说明**: 获取 API 调用所需的访问令牌 (access token)。
+    -   **返回**: 一个包含访问令牌字符串的 `Task`。
+
+### `IWebhookValidator`
+
+用于验证传入的 webhook 的服务。
+
+**方法**
+
+-   `Task<bool> ValidateSignatureAsync(string payload, string signature, string timestamp, string nonce)`
+    -   **说明**: 验证 webhook 请求的签名，以确保它来自腾讯官方。
+    -   **参数**:
+        -   `payload` (string): 请求体。
+        -   `signature` (string): `X-Tencent-Signature` 请求头的值。
+        -   `timestamp` (string): `X-Tencent-Timestamp` 请求头的值。
+        -   `nonce` (string): `X-Tencent-Nonce` 请求头的值。
+    -   **返回**: 如果签名有效，则为包含 `true` 的 `Task`，否则为 `false`。

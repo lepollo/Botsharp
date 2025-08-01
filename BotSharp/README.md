@@ -113,3 +113,68 @@ namespace BotSharp.Examples.Controllers
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request.
+
+## API Reference
+
+This section documents the public API of the BotSharp library.
+
+### `IQBotClient`
+
+The main client for interacting with the QQ Bot.
+
+**Properties**
+
+-   `User? CurrentUser { get; }`
+    -   **Description**: Gets the current user information after a successful connection.
+
+**Events**
+
+-   `event Action<ReadyPayload> OnReady`
+    -   **Description**: Triggered when the bot is ready and has successfully connected.
+-   `event Action<Message> OnAtMessageCreated`
+    -   **Description**: Triggered when an @ message is received.
+
+**Methods**
+
+-   `Task ProcessWebhookPayloadAsync(string payload)`
+    -   **Description**: Processes the raw payload received from the QQ Bot webhook.
+    -   **Parameters**:
+        -   `payload` (string): The JSON payload from the webhook.
+
+### `IMessageService`
+
+Service for sending messages.
+
+**Methods**
+
+-   `Task<Message> SendMessageAsync(string channelId, string message)`
+    -   **Description**: Sends a message to a specified channel.
+    -   **Parameters**:
+        -   `channelId` (string): The ID of the channel to send the message to.
+        -   `message` (string): The content of the message.
+    -   **Returns**: A `Task` containing the sent `Message` object.
+
+### `IAuthenticationService`
+
+Service for handling authentication.
+
+**Methods**
+
+-   `Task<string> GetAccessTokenAsync()`
+    -   **Description**: Gets the access token required for API calls.
+    -   **Returns**: A `Task` containing the access token string.
+
+### `IWebhookValidator`
+
+Service for validating incoming webhooks.
+
+**Methods**
+
+-   `Task<bool> ValidateSignatureAsync(string payload, string signature, string timestamp, string nonce)`
+    -   **Description**: Validates the signature of a webhook request to ensure it's from Tencent.
+    -   **Parameters**:
+        -   `payload` (string): The request body.
+        -   `signature` (string): The value of the `X-Tencent-Signature` header.
+        -   `timestamp` (string): The value of the `X-Tencent-Timestamp` header.
+        -   `nonce` (string): The value of the `X-Tencent-Nonce` header.
+    -   **Returns**: A `Task` containing `true` if the signature is valid, otherwise `false`.
