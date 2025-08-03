@@ -28,20 +28,30 @@ namespace QQBot.Net.Client
         {
             if (!string.IsNullOrEmpty(_accessToken))
             {
+                Console.WriteLine("[DEBUG] AuthenticationService: Using cached access token.");
                 return _accessToken;
             }
 
-            var response = await _httpClient.PostAsJsonAsync("https://bots.qq.com/app/get_app_token", new
+            Console.WriteLine("[DEBUG] AuthenticationService: Requesting new access token...");
+            var requestBody = new
             {
                 appId = _botOptions.AppId,
                 clientSecret = _botOptions.AppSecret
-            });
+            };
+            Console.WriteLine($"[DEBUG] AuthenticationService: Request URL: https://bots.qq.com/app/get_app_token");
+            Console.WriteLine($"[DEBUG] AuthenticationService: Request Body: {JsonSerializer.Serialize(requestBody)}");
+
+            var response = await _httpClient.PostAsJsonAsync("https://bots.qq.com/app/get_app_token", requestBody);
+
+            Console.WriteLine($"[DEBUG] AuthenticationService: Response Status Code: {response.StatusCode}");
+            var content = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"[DEBUG] AuthenticationService: Response Body: {content}");
 
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync();
             var tokenResponse = JsonDocument.Parse(content).RootElement;
             _accessToken = tokenResponse.GetProperty("access_token").GetString();
+            Console.WriteLine("[DEBUG] AuthenticationService: Access token obtained.");
 
             return _accessToken!;
         }

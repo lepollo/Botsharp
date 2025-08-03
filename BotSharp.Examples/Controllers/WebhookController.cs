@@ -32,6 +32,7 @@ namespace QQBot.Net.Examples.Controllers
         {
             using var reader = new StreamReader(Request.Body);
             var payload = await reader.ReadToEndAsync();
+            Console.WriteLine($"[DEBUG] Received raw payload: {payload}");
 
             Request.Headers.TryGetValue("X-Tencent-Signature", out var signature);
             Request.Headers.TryGetValue("X-Tencent-Timestamp", out var timestamp);
@@ -51,6 +52,7 @@ namespace QQBot.Net.Examples.Controllers
         private void OnAtMessageCreated(Message message)
         {
             _logger.LogInformation($"Received message from {message.Author.Username}: {message.Content}");
+            Console.WriteLine($"[DEBUG] OnAtMessageCreated triggered for user: {message.Author.Username}, content: {message.Content}");
             _messageService.SendMessageAsync(message.ChannelId, "Hello, world!");
         }
     }
